@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+FitBuddy - Admin Dashboard
+{% endblock %}
+
+
+{% block content %}
+
+
+<section class="hero">
+
+    <span class="eyebrow">
+        ADMIN DASHBOARD
+    </span>
+
+
+    <h1>
+        All Users and Plans
+    </h1>
+
+
+    <p>
+        {{ rows|length }}
+        saved user(s).
+    </p>
+
+</section>
+
+
+{% for row in rows %}
+
+
+<section class="card">
+
+    <h2>
+
+        {{ row.user.name }}
+
+        <small>
+            ({{ row.user.user_id }})
+        </small>
+
+    </h2>
+
+
+    <p>
+
+        Age:
+        {{ row.user.age }}
+
+        ·
+
+        {{ row.user.weight }} kg
+
+        ·
+
+        {{ row.user.goal }}
+
+        ·
+
+        {{ row.user.intensity }}
+
+        ·
+
+        {{ row.user.experience_level }}
+
+    </p>
+
+
+    {% if row.plan %}
+
+
+    <details>
+
+        <summary>
+            View Original Plan
+        </summary>
+
+
+        <pre class="plan">
+{{ row.plan.original_plan }}
+        </pre>
+
+    </details>
+
+
+    {% if row.plan.updated_plan %}
+
+    <details>
+
+        <summary>
+            View Updated Plan
+        </summary>
+
+
+        <pre class="plan">
+{{ row.plan.updated_plan }}
+        </pre>
+
+    </details>
+
+    {% endif %}
+
+
+    {% else %}
+
+    <p>
+        No plan stored.
+    </p>
+
+    {% endif %}
+
+
+</section>
+
+
+{% else %}
+
+
+<section class="card">
+
+    No users yet.
+
+</section>
+
+
+{% endfor %}
+
+
+{% endblock %}

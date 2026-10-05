@@ -1,0 +1,228 @@
+{% extends "base.html" %}
+
+{% block title %}
+FitBuddy - AI Fitness Planner
+{% endblock %}
+
+
+{% block content %}
+
+<section class="hero">
+
+    <span class="eyebrow">
+        AI FITNESS PLANNER
+    </span>
+
+
+    <h1>
+        Your 7-Day Plan,
+        Generated With Gemini
+    </h1>
+
+
+    <p>
+        Enter a few details to create
+        a structured workout routine
+        and a practical nutrition or
+        recovery tip.
+    </p>
+
+</section>
+
+
+<form
+    class="card form-grid"
+    action="/generate-workout"
+    method="post"
+>
+
+
+    <div>
+
+        <label for="name">
+            Name
+        </label>
+
+        <input
+            id="name"
+            name="name"
+            required
+            maxlength="100"
+            placeholder="Your name"
+        >
+
+    </div>
+
+
+    <div>
+
+        <label for="user_id">
+            User ID
+        </label>
+
+        <input
+            id="user_id"
+            name="user_id"
+            required
+            maxlength="64"
+            placeholder="Example: STU001"
+        >
+
+    </div>
+
+
+    <div>
+
+        <label for="age">
+            Age
+        </label>
+
+        <input
+            id="age"
+            name="age"
+            type="number"
+            min="10"
+            max="100"
+            required
+        >
+
+    </div>
+
+
+    <div>
+
+        <label for="weight">
+            Weight (kg)
+        </label>
+
+        <input
+            id="weight"
+            name="weight"
+            type="number"
+            min="20"
+            max="300"
+            step="0.1"
+            required
+        >
+
+    </div>
+
+
+    <div>
+
+        <label for="goal">
+            Fitness Goal
+        </label>
+
+        <select
+            id="goal"
+            name="goal"
+        >
+
+            <option value="general wellness">
+                General Wellness
+            </option>
+
+            <option value="muscle gain">
+                Muscle Gain
+            </option>
+
+            <option value="weight loss">
+                Weight Loss
+            </option>
+
+            <option value="flexibility">
+                Flexibility
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <div>
+
+        <label for="intensity">
+            Workout Intensity
+        </label>
+
+        <select
+            id="intensity"
+            name="intensity"
+        >
+
+            <option value="low">
+                Low
+            </option>
+
+            <option
+                value="medium"
+                selected
+            >
+                Medium
+            </option>
+
+            <option value="high">
+                High
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <div>
+
+        <label for="experience_level">
+            Experience Level
+        </label>
+
+        <select
+            id="experience_level"
+            name="experience_level"
+        >
+
+            <option
+                value="beginner"
+                selected
+            >
+                Beginner
+            </option>
+
+            <option value="intermediate">
+                Intermediate
+            </option>
+
+            <option value="advanced">
+                Advanced
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <div class="full">
+
+        <button
+            class="button"
+            type="submit"
+        >
+            Generate 7-Day Plan
+        </button>
+
+    </div>
+
+
+    <p class="notice full">
+
+        General wellness information only.
+        Stop if exercise causes pain or
+        you feel unwell.
+
+    </p>
+
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,359 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    margin: 0;
+
+    font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background: #0b1020;
+
+    color: #edf2f7;
+
+    line-height: 1.6;
+}
+
+
+.topbar {
+
+    height: 64px;
+
+    padding: 0 6%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom:
+        1px solid #202942;
+
+    background: #0d1428;
+}
+
+
+.brand {
+
+    font-weight: 800;
+
+    font-size: 1.35rem;
+
+    color: white;
+
+    text-decoration: none;
+}
+
+
+.topbar nav {
+
+    display: flex;
+
+    gap: 18px;
+}
+
+
+.topbar nav a {
+
+    color: #aebbd2;
+
+    text-decoration: none;
+}
+
+
+.container {
+
+    width: min(1100px, 92%);
+
+    margin: auto;
+
+    padding: 38px 0 70px;
+}
+
+
+.hero {
+
+    padding: 25px 0 28px;
+}
+
+
+.eyebrow {
+
+    font-size: 0.75rem;
+
+    letter-spacing: 0.14em;
+
+    font-weight: 800;
+
+    color: #7dd3fc;
+}
+
+
+.hero h1 {
+
+    font-size:
+        clamp(2rem, 5vw, 3.5rem);
+
+    line-height: 1.08;
+
+    margin: 10px 0;
+}
+
+
+.hero p {
+
+    max-width: 720px;
+
+    color: #aebbd2;
+}
+
+
+.card {
+
+    background: #111a2e;
+
+    border:
+        1px solid #24314e;
+
+    border-radius: 18px;
+
+    padding: 24px;
+
+    margin: 18px 0;
+
+    box-shadow:
+        0 12px 30px #0002;
+}
+
+
+.form-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 18px;
+}
+
+
+.full {
+
+    grid-column: 1 / -1;
+}
+
+
+label {
+
+    display: block;
+
+    font-weight: 700;
+
+    margin-bottom: 7px;
+}
+
+
+input,
+select,
+textarea {
+
+    width: 100%;
+
+    background: #0b1222;
+
+    border:
+        1px solid #34435f;
+
+    color: white;
+
+    border-radius: 10px;
+
+    padding: 12px;
+
+    font: inherit;
+}
+
+
+textarea {
+
+    min-height: 130px;
+
+    resize: vertical;
+}
+
+
+.button {
+
+    display: inline-block;
+
+    border: 0;
+
+    border-radius: 10px;
+
+    padding: 12px 18px;
+
+    background: #38bdf8;
+
+    color: #07111f;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    text-decoration: none;
+}
+
+
+.button:hover {
+
+    opacity: 0.9;
+}
+
+
+.notice {
+
+    color: #9fb0c8;
+
+    font-size: 0.9rem;
+}
+
+
+.two-col {
+
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr;
+
+    gap: 18px;
+}
+
+
+.profile {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 18px;
+
+    flex-wrap: wrap;
+}
+
+
+.profile div {
+
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+
+.profile span {
+
+    color: #aebbd2;
+}
+
+
+.plan {
+
+    white-space: pre-wrap;
+
+    word-wrap: break-word;
+
+    background: #09101d;
+
+    border-radius: 12px;
+
+    padding: 18px;
+
+    border:
+        1px solid #202d47;
+
+    overflow: auto;
+}
+
+
+.tip {
+
+    font-size: 1.05rem;
+}
+
+
+.success {
+
+    padding: 13px 16px;
+
+    border-radius: 10px;
+
+    background: #123b2d;
+
+    border:
+        1px solid #1d6a4c;
+}
+
+
+.error {
+
+    border-color: #713e4c;
+}
+
+
+small {
+
+    color: #94a3b8;
+}
+
+
+details {
+
+    margin-top: 15px;
+}
+
+
+summary {
+
+    cursor: pointer;
+
+    font-weight: 700;
+}
+
+
+@media (max-width: 760px) {
+
+    .form-grid,
+    .two-col {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .full {
+
+        grid-column: auto;
+    }
+
+
+    .container {
+
+        padding-top: 22px;
+    }
+
+
+    .topbar {
+
+        padding: 0 4%;
+    }
+
+}

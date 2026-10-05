@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+FitBuddy - Your Plan
+{% endblock %}
+
+
+{% block content %}
+
+
+{% if message %}
+
+<div class="success">
+
+    {{ message }}
+
+</div>
+
+{% endif %}
+
+
+<section class="profile card">
+
+    <div>
+
+        <strong>
+            {{ user.name }}
+        </strong>
+
+        <span>
+            User ID:
+            {{ user.user_id }}
+        </span>
+
+    </div>
+
+
+    <div>
+
+        <span>
+            Age:
+            {{ user.age }}
+        </span>
+
+        <span>
+            Weight:
+            {{ user.weight }} kg
+        </span>
+
+    </div>
+
+
+    <div>
+
+        <span>
+            Goal:
+            {{ user.goal }}
+        </span>
+
+        <span>
+            Intensity:
+            {{ user.intensity }}
+        </span>
+
+        <span>
+            Level:
+            {{ user.experience_level }}
+        </span>
+
+    </div>
+
+</section>
+
+
+<div class="two-col">
+
+
+<section class="card">
+
+    <h2>
+        Original 7-Day Plan
+    </h2>
+
+
+    <pre class="plan">
+{{ plan.original_plan }}
+    </pre>
+
+</section>
+
+
+<section class="card">
+
+    <h2>
+        Nutrition / Recovery Tip
+    </h2>
+
+
+    <p class="tip">
+
+        {{ plan.nutrition_tip }}
+
+    </p>
+
+</section>
+
+
+</div>
+
+
+{% if plan.updated_plan %}
+
+<section class="card">
+
+    <h2>
+        Updated Plan
+    </h2>
+
+
+    <p class="notice">
+
+        Feedback:
+
+        {{ plan.feedback }}
+
+    </p>
+
+
+    <pre class="plan">
+{{ plan.updated_plan }}
+    </pre>
+
+</section>
+
+{% endif %}
+
+
+<section class="card">
+
+    <h2>
+        Refine Your Plan
+    </h2>
+
+
+    <form
+        action="/submit-feedback"
+        method="post"
+    >
+
+        <input
+            type="hidden"
+            name="user_id"
+            value="{{ user.user_id }}"
+        >
+
+
+        <label for="feedback">
+
+            What would you like
+            to change?
+
+        </label>
+
+
+        <textarea
+            id="feedback"
+            name="feedback"
+            maxlength="1000"
+            required
+            placeholder="Example: Include more mobility and one extra recovery day."
+        ></textarea>
+
+
+        <button
+            class="button"
+            type="submit"
+        >
+            Update Plan With AI
+        </button>
+
+    </form>
+
+</section>
+
+
+{% endblock %}
